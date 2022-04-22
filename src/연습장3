@@ -38,37 +38,37 @@ public class Report {
 			int[] dataNight = new int[StaticValue.AGE_NUM_OF_CHOICES];
 			int revenueDay = 0;
 			int revenueNight = 0;
-			System.out.print("================ ±ÇÁ¾ º° ÆÇ¸ÅÇöÈ² ================\n");
+			System.out.print("================ ê¶Œì¢… ë³„ íŒë§¤í˜„í™© ================\n");
 			
 			while ((line = br.readLine()) != null) {
 				String[] lineArray = line.split(",");
 
-				if (lineArray[1].equals("ÁÖ°£")) {
+				if (lineArray[1].equals("ì£¼ê°„")) {
 					revenueDay += Integer.parseInt(lineArray[5]);
 					
-					if (lineArray[3].equals("À¯¾Æ")) {
+					if (lineArray[3].equals("ìœ ì•„")) {
 						dataDay[StaticValue.AGE_BABY] += Integer.parseInt(lineArray[4]);
-					} else if (lineArray[3].equals("¾î¸°ÀÌ")) {
+					} else if (lineArray[3].equals("ì–´ë¦°ì´")) {
 						dataDay[StaticValue.AGE_CHILD] += Integer.parseInt(lineArray[4]);
-					} else if (lineArray[3].equals("Ã»¼Ò³â")) {
+					} else if (lineArray[3].equals("ì²­ì†Œë…„")) {
 						dataDay[StaticValue.AGE_TEEN] += Integer.parseInt(lineArray[4]);
-					} else if (lineArray[3].equals("¼ºÀÎ")) {
+					} else if (lineArray[3].equals("ì„±ì¸")) {
 						dataDay[StaticValue.AGE_ADULT] += Integer.parseInt(lineArray[4]);
-					} else if (lineArray[3].equals("³ëÀÎ")) {
+					} else if (lineArray[3].equals("ë…¸ì¸")) {
 						dataDay[StaticValue.AGE_ELDER] += Integer.parseInt(lineArray[4]);
 					}
-				} else if (lineArray[1].equals("¾ß°£")) {
+				} else if (lineArray[1].equals("ì•¼ê°„")) {
 					revenueNight += Integer.parseInt(lineArray[5]);
 					
-					if (lineArray[3].equals("À¯¾Æ")) {
+					if (lineArray[3].equals("ìœ ì•„")) {
 						dataNight[StaticValue.AGE_BABY] += Integer.parseInt(lineArray[4]);
-					} else if (lineArray[3].equals("¾î¸°ÀÌ")) {
+					} else if (lineArray[3].equals("ì–´ë¦°ì´")) {
 						dataNight[StaticValue.AGE_CHILD] += Integer.parseInt(lineArray[4]);
-					} else if (lineArray[3].equals("Ã»¼Ò³â")) {
+					} else if (lineArray[3].equals("ì²­ì†Œë…„")) {
 						dataNight[StaticValue.AGE_TEEN] += Integer.parseInt(lineArray[4]);
-					} else if (lineArray[3].equals("¼ºÀÎ")) {
+					} else if (lineArray[3].equals("ì„±ì¸")) {
 						dataNight[StaticValue.AGE_ADULT] += Integer.parseInt(lineArray[4]);
-					} else if (lineArray[3].equals("³ëÀÎ")) {
+					} else if (lineArray[3].equals("ë…¸ì¸")) {
 						dataNight[StaticValue.AGE_ELDER] += Integer.parseInt(lineArray[4]);
 					}
 				} 
@@ -78,17 +78,17 @@ public class Report {
 			for (int i = 0; i < StaticValue.AGE_NUM_OF_CHOICES; i++) {
 				numOfTickets += dataDay[i];
 			}
-			System.out.printf("ÁÖ°£±Ç ÃÑ %d¸Å\n", numOfTickets);
-			System.out.printf("À¯¾Æ %d¸Å, ¾î¸°ÀÌ %d¸Å, Ã»¼Ò³â %d¸Å, ¾î¸¥ %d¸Å, ³ëÀÎ %d¸Å\n", dataDay[0], dataDay[1], dataDay[2], dataDay[3], dataDay[4]);
-			System.out.printf("ÁÖ°£±Ç ¸ÅÃâ : %d¿ø\n\n", revenueDay);
+			System.out.printf("ì£¼ê°„ê¶Œ ì´ %dë§¤\n", numOfTickets);
+			System.out.printf("ìœ ì•„ %dë§¤, ì–´ë¦°ì´ %dë§¤, ì²­ì†Œë…„ %dë§¤, ì–´ë¥¸ %dë§¤, ë…¸ì¸ %dë§¤\n", dataDay[0], dataDay[1], dataDay[2], dataDay[3], dataDay[4]);
+			System.out.printf("ì£¼ê°„ê¶Œ ë§¤ì¶œ : %dì›\n\n", revenueDay);
 			
 			numOfTickets = 0;
 			for (int i = 0; i < StaticValue.AGE_NUM_OF_CHOICES; i++) {
 				numOfTickets += dataNight[i];
 			}
-			System.out.printf("¾ß°£±Ç ÃÑ %d¸Å\n", numOfTickets);
-			System.out.printf("À¯¾Æ %d¸Å, ¾î¸°ÀÌ %d¸Å, Ã»¼Ò³â %d¸Å, ¾î¸¥ %d¸Å, ³ëÀÎ %d¸Å\n", dataNight[0], dataNight[1], dataNight[2], dataNight[3], dataNight[4]);
-			System.out.printf("¾ß°£±Ç ¸ÅÃâ : %d¿ø\n", revenueNight);
+			System.out.printf("ì•¼ê°„ê¶Œ ì´ %dë§¤\n", numOfTickets);
+			System.out.printf("ìœ ì•„ %dë§¤, ì–´ë¦°ì´ %dë§¤, ì²­ì†Œë…„ %dë§¤, ì–´ë¥¸ %dë§¤, ë…¸ì¸ %dë§¤\n", dataNight[0], dataNight[1], dataNight[2], dataNight[3], dataNight[4]);
+			System.out.printf("ì•¼ê°„ê¶Œ ë§¤ì¶œ : %dì›\n", revenueNight);
 
 			System.out.println("----------------------------------------------\n");
 			br.close();
@@ -100,23 +100,23 @@ public class Report {
 			String dateOfUpperLine = "";
 			int revenue = 0;
 			int sum = 0;
-			System.out.print("=========== ÀÏÀÚ º° ¸ÅÃâÇöÈ² ===========\n");
-			br.readLine(); // ÇÑÁÙ ½ºÅµ
+			System.out.print("=========== ì¼ì ë³„ ë§¤ì¶œí˜„í™© ===========\n");
+			br.readLine(); // í•œì¤„ ìŠ¤í‚µ
 			while ((line = br.readLine()) != null) {
 				String[] lineArray = line.split(",");
 		
 				if (!lineArray[0].equals(dateOfUpperLine)) {
 					if (dateOfUpperLine.length() != 0) {
-						System.out.printf("%10d¿ø\n", sum);
+						System.out.printf("%10dì›\n", sum);
 					}
-					System.out.printf("%4s³â %2s¿ù %2sÀÏ : ÃÑ ¸ÅÃâ", lineArray[0].substring(0, 4), lineArray[0].substring(4, 6), lineArray[0].substring(6));
-					sum = Integer.parseInt(lineArray[5]); // ÃÑ ¸ÅÃâ °è»ê 
+					System.out.printf("%4së…„ %2sì›” %2sì¼ : ì´ ë§¤ì¶œ", lineArray[0].substring(0, 4), lineArray[0].substring(4, 6), lineArray[0].substring(6));
+					sum = Integer.parseInt(lineArray[5]); // ì´ ë§¤ì¶œ ê³„ì‚° 
 					dateOfUpperLine = lineArray[0]; 
 				} else {
 					sum += Integer.parseInt(lineArray[5]);
 				}
 			}
-			System.out.printf("%10d¿ø\n", sum);
+			System.out.printf("%10dì›\n", sum);
 			System.out.println("------------------------------------\n");
 			br.close();
 		}
@@ -127,21 +127,21 @@ public class Report {
 			int sum = 0;
 			int[] numOfTickets = new int[StaticValue.DISCOUNT_NUM_OF_CHOICES];
 			
-			System.out.print("===== ¿ì´ë±Ç ÆÇ¸Å ÇöÈ² =====\n");
+			System.out.print("===== ìš°ëŒ€ê¶Œ íŒë§¤ í˜„í™© =====\n");
 			while ((line = br.readLine()) != null) {
 				String[] lineArray = line.split(",");
 				
-				if (lineArray[6].equals("¾øÀ½")) {
+				if (lineArray[6].equals("ì—†ìŒ")) {
 					numOfTickets[StaticValue.DISCOUNT_NONE - 1] += Integer.parseInt(lineArray[4]);
-				} else if (lineArray[6].equals("Àå¾ÖÀÎ")) {
+				} else if (lineArray[6].equals("ì¥ì• ì¸")) {
 					numOfTickets[StaticValue.DISCOUNT_DISABLED - 1] += Integer.parseInt(lineArray[4]);
-				} else if (lineArray[6].equals("±¹°¡À¯°øÀÚ")) {
+				} else if (lineArray[6].equals("êµ­ê°€ìœ ê³µì")) {
 					numOfTickets[StaticValue.DISCOUNT_VETERAN - 1] += Integer.parseInt(lineArray[4]);
-				} else if (lineArray[6].equals("ÈŞ°¡Àåº´")) {
+				} else if (lineArray[6].equals("íœ´ê°€ì¥ë³‘")) {
 					numOfTickets[StaticValue.DISCOUNT_SOLDIER - 1] += Integer.parseInt(lineArray[4]);
-				} else if (lineArray[6].equals("ÀÓ»êºÎ")) {
+				} else if (lineArray[6].equals("ì„ì‚°ë¶€")) {
 					numOfTickets[StaticValue.DISCOUNT_PREGNANT - 1] += Integer.parseInt(lineArray[4]);
-				} else if (lineArray[6].equals("´ÙÀÚ³à")) {
+				} else if (lineArray[6].equals("ë‹¤ìë…€")) {
 					numOfTickets[StaticValue.DISCOUNT_MULTICHILDS - 1] += Integer.parseInt(lineArray[4]);
 				}
 			}
@@ -150,7 +150,7 @@ public class Report {
 				sum += numOfTickets[i];
 			}
 			
-			System.out.printf("ÃÑ ÆÇ¸Å Æ¼ÄÏ¼ö  : %5d¸Å\n¿ì´ë ¾øÀ½      : %5d¸Å\nÀå¾ÖÀÎ        : %5d¸Å\n±¹°¡À¯°øÀÚ     : %5d¸Å\nÈŞ°¡Àåº´       : %5d¸Å\nÀÓ»êºÎ        : %5d¸Å\n´ÙÀÚ³à        : %5d¸Å\n", sum, numOfTickets[0], numOfTickets[1], numOfTickets[2], numOfTickets[3], numOfTickets[4], numOfTickets[5]);
+			System.out.printf("ì´ íŒë§¤ í‹°ì¼“ìˆ˜  : %5dë§¤\nìš°ëŒ€ ì—†ìŒ      : %5dë§¤\nì¥ì• ì¸        : %5dë§¤\nêµ­ê°€ìœ ê³µì     : %5dë§¤\níœ´ê°€ì¥ë³‘       : %5dë§¤\nì„ì‚°ë¶€        : %5dë§¤\në‹¤ìë…€        : %5dë§¤\n", sum, numOfTickets[0], numOfTickets[1], numOfTickets[2], numOfTickets[3], numOfTickets[4], numOfTickets[5]);
 			System.out.println("------------------------\n");
 			br.close();
 			
