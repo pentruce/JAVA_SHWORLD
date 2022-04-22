@@ -2,19 +2,19 @@ package Final_ticket;
 
 public void csv() {
         File csv = new File("C:\\Users\\sohyeon\\Desktop\\report_SHWORLD.csv");
-        BufferedWriter bw = null; // Ãâ·Â ½ºÆ®¸² »ı¼º
+        BufferedWriter bw = null; // ì¶œë ¥ ìŠ¤íŠ¸ë¦¼ ìƒì„±
         
         try {
             bw = new BufferedWriter(new FileWriter(csv, true));
-            // csvÆÄÀÏÀÇ ±âÁ¸ °ª¿¡ ÀÌ¾î¾²·Á¸é À§Ã³·³ true¸¦ ÁöÁ¤ÇÏ°í, ±âÁ¸ °ªÀ» µ¤¾î¾²·Á¸é true¸¦ »èÁ¦ÇÑ´Ù
+            // csvíŒŒì¼ì˜ ê¸°ì¡´ ê°’ì— ì´ì–´ì“°ë ¤ë©´ ìœ„ì²˜ëŸ¼ trueë¥¼ ì§€ì •í•˜ê³ , ê¸°ì¡´ ê°’ì„ ë®ì–´ì“°ë ¤ë©´ trueë¥¼ ì‚­ì œí•œë‹¤
             for (int i = 0; i < dataList.size(); i++) {
                 String[] data = dataList.get(i);
                 String aData = "";
                 aData = data[0] + "," + data[1] + "," + data[2] + "," + data[3]+"\n";
         
-                // ÇÑ ÁÙ¿¡ ³ÖÀ» °¢ µ¥ÀÌÅÍ »çÀÌ¿¡ ,¸¦ ³Ö´Â´Ù
+                // í•œ ì¤„ì— ë„£ì„ ê° ë°ì´í„° ì‚¬ì´ì— ,ë¥¼ ë„£ëŠ”ë‹¤
                 bw.write(aData);
-                // ÀÛ¼ºÇÑ µ¥ÀÌÅÍ¸¦ ÆÄÀÏ¿¡ ³Ö´Â´Ù
+                // ì‘ì„±í•œ ë°ì´í„°ë¥¼ íŒŒì¼ì— ë„£ëŠ”ë‹¤
              
             } 
             
@@ -29,8 +29,8 @@ public void csv() {
             try {
                 if (bw != null) {
                 	bw.close();
-                    bw.flush(); // ³²¾ÆÀÖ´Â µ¥ÀÌÅÍ±îÁö º¸³» ÁØ´Ù
-                   ; // »ç¿ëÇÑ BufferedWriter¸¦ ´İ¾Æ ÁØ´Ù
+                    bw.flush(); // ë‚¨ì•„ìˆëŠ” ë°ì´í„°ê¹Œì§€ ë³´ë‚´ ì¤€ë‹¤
+                   ; // ì‚¬ìš©í•œ BufferedWriterë¥¼ ë‹«ì•„ ì¤€ë‹¤
                 }
             } catch (IOException e) {
                 e.printStackTrace();
